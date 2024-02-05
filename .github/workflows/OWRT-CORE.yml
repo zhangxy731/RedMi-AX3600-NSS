@@ -23,6 +23,9 @@ on:
       OWRT_IP:
         required: true
         type: string
+      REPO_BRANCH:
+        required: true
+        type: string
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -32,7 +35,8 @@ env:
   OWRT_URL: ${{inputs.OWRT_URL}}
   OWRT_PW: ${{inputs.OWRT_PW}}
   OWRT_IP: ${{inputs.OWRT_IP}}
-
+  REPO_BRANCH: ${{inputs.REPO_BRANCH}}
+  
 jobs:
   owrt_core:
     runs-on: ubuntu-latest
@@ -78,7 +82,7 @@ jobs:
 
       - name: Clone OWRT Code
         run: |
-          git clone $OWRT_URL ./owrt
+          git clone $OWRT_URL -b $REPO_BRANCH ./owrt
       
       - name: Load custom feeds
         run: |
