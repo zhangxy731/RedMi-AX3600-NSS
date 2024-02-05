@@ -145,6 +145,7 @@ jobs:
         run: |
           cd ./owrt && mkdir ./upload
 
+          cp -rf $(find ./bin/targets/ -type f -iname "*.*") ./upload/
 
          
           cp -rf ./.config ./upload/Config_"$OWRT_TARGET"_"$OWRT_SOURCE"_"$OWRT_DATE".txt
