@@ -1,10 +1,10 @@
 #CI项目名
-name: ipq807x-nss
+name: ipq807x-nss_qualcommax-6.1-nss-mesh
 
 on:
   #自动编译：每天早上4点
-  schedule:
-    - cron: 0 20 * * *
+  #schedule:
+    #- cron: 0 20 * * *
   #手动编译
   workflow_dispatch:
 
@@ -30,3 +30,5 @@ jobs:
       OWRT_IP: 192.168.31.1
       #默认源码
       OWRT_URL: https://github.com/qosmio/openwrt-ipq.git
+      #REPO_BRANCH name
+      REPO_BRANCH: qualcommax-6.1-nss-mesh
