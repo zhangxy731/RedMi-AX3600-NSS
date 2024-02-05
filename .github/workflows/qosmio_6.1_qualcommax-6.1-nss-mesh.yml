@@ -1,5 +1,5 @@
 #CI项目名
-name: ipq807x-nss_qualcommax-6.1-nss-mesh
+name: qosmio_6.1_qualcommax-6.1-nss-mesh
 
 on:
   #自动编译：每天早上4点
